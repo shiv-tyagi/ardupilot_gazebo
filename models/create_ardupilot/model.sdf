@@ -3,7 +3,7 @@
   <model name="create_ardupilot">
     <pose>0 0 0.5 0 0 0</pose>
     <include>
-      <uri>model://create</uri>
+      <uri>model://turtlebot</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
@@ -37,7 +37,7 @@
   </link>
     <joint name="camera_mount" type="fixed">
       <child>cam_link</child>
-      <parent>create::base</parent>
+      <parent>turtlebot::create::base</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -70,7 +70,7 @@
     </link>
     <joint name='imu_joint' type='revolute'>
       <child>imu_link</child>
-      <parent>create::base</parent>
+      <parent>turtlebot::create::base</parent>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
@@ -116,7 +116,7 @@
         <i_min>0</i_min>
         <cmd_max>10</cmd_max>
         <cmd_min>-10</cmd_min>
-        <jointName>create::left_wheel_joint</jointName>
+        <jointName>turtlebot::create::left_wheel_joint</jointName>
         <multiplier>70</multiplier>
       </control>
       <control channel="2">
@@ -129,7 +129,7 @@
         <i_min>0</i_min>
         <cmd_max>10</cmd_max>
         <cmd_min>-10</cmd_min>
-        <jointName>create::right_wheel_joint</jointName>
+        <jointName>turtlebot::create::right_wheel_joint</jointName>
         <multiplier>70</multiplier>
       </control>
     </plugin>
