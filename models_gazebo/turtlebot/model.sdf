@@ -350,74 +350,13 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="standoff_kinect_0_collision">
-        <pose>-0.105098 0.098000 0.202308 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.001111</radius>
-            <length>0.008585</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="standoff_kinect_0_visual">
-        <pose>-0.105098 0.098000 0.202308 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <collision name="standoff_kinect_1_collision">
-        <pose>-0.105098 -0.098000 0.202308 0 0 0</pose>
-        <geometry>
-          <cylinder>
-            <radius>0.001111</radius>
-            <length>0.008585</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="standoff_kinect_1_visual">
-        <pose>-0.105098 -0.098000 0.202308 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://turtlebot/meshes/68-04556-RA_Kinect_Standoff_Assy.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <sensor name="laser" type="ray">
-        <pose>-0.065000 0 0.092000 0 0 0</pose>
-        <ray>
-          <scan>
-            <horizontal>
-              <samples>180</samples>
-              <resolution>1.000000</resolution>
-              <min_angle>-2.268928</min_angle>
-              <max_angle>2.268928</max_angle>
-            </horizontal>
-          </scan>
-          <range>
-            <min>0.080000</min>
-            <max>10</max>
-            <resolution>0.010000</resolution>
-          </range>
-        </ray>
-        <!--
-        <plugin name='laser_controller' filename='libgazebo_ros_laser.so'>
-          <gaussianNoise>0.005</gaussianNoise>
-          <alwaysOn>1</alwaysOn>
-          <updateRate>20</updateRate>
-          <topicName>scan</topicName>
-          <frameName>laser</frameName>
-        </plugin>-->
-        <update_rate>20</update_rate>
-      </sensor>
     </link>
     <include>
       <uri>model://create</uri>
     </include>
     <include>
-      <uri>model://kinect</uri>
-      <pose>-0.087098 0 0.303857 0 0 0</pose>
+      <uri>model://gimbal_small_2d</uri>
+      <pose>0.08 0.01 0.29 -1.570765 0 -1.570765</pose>
     </include>
     <joint name="create_rack" type="revolute">
       <parent>create::base</parent>
@@ -431,8 +370,8 @@
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="kinect_rack" type="revolute">
-      <parent>kinect::link</parent>
+    <joint name="gimbal_rack" type="revolute">
+      <parent>gimbal_small_2d::base_link</parent>
       <child>rack</child>
       <axis>
         <xyz>0 0 1</xyz>
