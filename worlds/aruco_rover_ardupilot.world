@@ -77,6 +77,8 @@
         <pose>0 0 0 0 0 0</pose>
       </include>
     </model>
-
+    <gui>
+        <plugin name="video_widget" filename="libgazebo_video_stream_widget.so"/>
+    </gui>
   </world>
 </sdf>
